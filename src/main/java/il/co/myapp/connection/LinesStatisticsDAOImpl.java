@@ -8,7 +8,7 @@ import java.sql.PreparedStatement;
 import il.co.myapp.domain.LinesStatistics;
 
 /**
- * UserDAOImpl represents DAO for the domain class User. 
+ * LinesStatisticsDAOImpl represents DAO for the domain class User. 
  * @author Artem Meleshko
  * @version 1.0 2017
  */
