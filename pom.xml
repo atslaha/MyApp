@@ -6,6 +6,12 @@
   <name>MyParser</name>
   <description>parser with JDBC</description>
   <build>
+  <resources>
+		<resource>
+				<filtering>true</filtering>
+				<directory>src/main/resources</directory>
+			</resource>
+		</resources>
         <plugins>
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -19,6 +25,19 @@
             </plugin>
         </plugins>
     </build>
+    <dependencies>
+    	<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version> 6.0.5</version>
+		</dependency>
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<version>1.4.193</version>
+			<scope>test</scope>
+		</dependency>
+    </dependencies>
   
   
 </project>

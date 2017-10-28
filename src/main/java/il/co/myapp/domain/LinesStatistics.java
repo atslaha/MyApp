@@ -8,9 +8,9 @@ public class LinesStatistics {
      *@version 1.0 2017
      */
     
-    private Long lineId;
-    private int longestWord;
-    private int shortestWord;
+    private Integer lineId;
+    private String longestWord;
+    private String shortestWord;
     private int lineLength;
     private int averageWordLength;
     
@@ -22,7 +22,7 @@ public class LinesStatistics {
      * @param lineLength
      * @param averageWordLength
      */
-    public LinesStatistics(Long lineId, int longestWord, int shortestWord, int lineLength, int averageWordLength){
+    public LinesStatistics(Integer lineId, String longestWord, String shortestWord, int lineLength, int averageWordLength){
         this.lineId = lineId;
         this.longestWord = longestWord;
         this.shortestWord = shortestWord;
@@ -35,42 +35,42 @@ public class LinesStatistics {
     /**
      * @return the lineId
      */
-    public Long getLineId() {
+    public Integer getLineId() {
         return lineId;
     }
 
     /**
      * @param lineId the lineId to set
      */
-    public void setLineId(Long lineId) {
+    public void setLineId(Integer lineId) {
         this.lineId = lineId;
     }
 
     /**
      * @return the longestWord
      */
-    public int getLongestWord() {
+    public String getLongestWord() {
         return longestWord;
     }
 
     /**
      * @param longestWord the longestWord to set
      */
-    public void setLongestWord(int longestWord) {
+    public void setLongestWord(String longestWord) {
         this.longestWord = longestWord;
     }
 
     /**
      * @return the shortestWord
      */
-    public int getShortestWord() {
+    public String getShortestWord() {
         return shortestWord;
     }
 
     /**
      * @param shortestWord the shortestWord to set
      */
-    public void setShortestWord(int shortestWord) {
+    public void setShortestWord(String shortestWord) {
         this.shortestWord = shortestWord;
     }
 
