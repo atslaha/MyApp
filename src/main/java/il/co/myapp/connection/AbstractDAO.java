@@ -24,6 +24,20 @@ private ConnectionDB connection;
         this.connection=connection;
     }
     
+    public ResultSet executeQuery(Connection connect, String query, List values){
+        ResultSet result = null;
+        try {
+            PreparedStatement statement = connect.prepareStatement(query);
+            for(int i=0;i<values.size();i++){
+                statement.setObject(i+1, values.get(i));
+            }
+            result = statement.executeQuery();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return result;
+    } 
+    
     protected void updateQuery(String query, Object[] values){
         try {
             PreparedStatement statement = getConnection().prepareStatement(query);

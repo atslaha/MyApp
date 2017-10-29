@@ -14,7 +14,7 @@ import il.co.myapp.domain.LinesStatistics;
  */
 public class LinesStatisticsDAOImpl extends AbstractDAO implements LinesStatisticsDAO {
     private static final String SQL_FIND_BY_ID =
-            "SELECT longest_word, shortest_word, line_length, average_w_length FROM stat WHERE line_id = ?";
+            "SELECT line_id, longest_word, shortest_word, line_length, average_w_length FROM stat WHERE line_id = ?";
     private static final String SQL_INSERT =
             "INSERT INTO stat (longest_word, shortest_word, line_length, average_w_length) VALUES (?, ?, ?, ?)";
     private static final String SQL_UPDATE =

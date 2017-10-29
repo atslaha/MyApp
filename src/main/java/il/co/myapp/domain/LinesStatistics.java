@@ -1,5 +1,7 @@
 package il.co.myapp.domain;
 
+import java.util.Objects;
+
 public class LinesStatistics {
     
     /**
@@ -11,8 +13,8 @@ public class LinesStatistics {
     private Integer lineId;
     private String longestWord;
     private String shortestWord;
-    private int lineLength;
-    private int averageWordLength;
+    private Integer lineLength;
+    private Integer averageWordLength;
     
     /**
      * Constructs and Initializes LinesStatistics.
@@ -22,7 +24,7 @@ public class LinesStatistics {
      * @param lineLength
      * @param averageWordLength
      */
-    public LinesStatistics(Integer lineId, String longestWord, String shortestWord, int lineLength, int averageWordLength){
+    public LinesStatistics(Integer lineId, String longestWord, String shortestWord, Integer lineLength, Integer averageWordLength){
         this.lineId = lineId;
         this.longestWord = longestWord;
         this.shortestWord = shortestWord;
@@ -77,29 +79,62 @@ public class LinesStatistics {
     /**
      * @return the lineLength
      */
-    public int getLineLength() {
+    public Integer getLineLength() {
         return lineLength;
     }
 
     /**
      * @param lineLength the lineLength to set
      */
-    public void setLineLength(int lineLength) {
+    public void setLineLength(Integer lineLength) {
         this.lineLength = lineLength;
     }
 
     /**
      * @return the averageWordLength
      */
-    public int getAverageWordLength() {
+    public Integer getAverageWordLength() {
         return averageWordLength;
     }
 
     /**
      * @param averageWordLength the averageWordLength to set
      */
-    public void setAverageWordLength(int averageWordLength) {
+    public void setAverageWordLength(Integer averageWordLength) {
         this.averageWordLength = averageWordLength;
+    }
+    
+    @Override
+    public String toString(){
+        return "LineStatistic [lineId=" + lineId + ", longestWord=" + longestWord + ", shortestWord=" + shortestWord + 
+                ", lineLength=" + lineLength + ", awerageWordLength=" + averageWordLength + "]";
+    }
+    
+    /**
+     * Returns a hash code value for the object.
+     */
+    @Override
+    public int hashCode() {
+        Integer result = 17;
+        result = result*37 + longestWord.hashCode();
+        result = result*37 + shortestWord.hashCode();
+        result = result*37 + lineLength.hashCode();
+        result = result*37 + averageWordLength.hashCode();
+        return result;
+    }
+    
+    /**
+     * Indicates whether some other object is "equal to" this one.
+     */
+    @Override
+    public boolean equals(Object s){
+        if (s == this)
+            return true;
+        if (!(s instanceof LinesStatistics))
+            return false;
+        LinesStatistics other = (LinesStatistics)s;
+        return (Objects.equals(longestWord, other.longestWord) && Objects.equals(shortestWord, other.shortestWord) 
+                && Objects.equals(lineLength, other.lineLength) && Objects.equals(averageWordLength, other.averageWordLength));
     }
     
     
