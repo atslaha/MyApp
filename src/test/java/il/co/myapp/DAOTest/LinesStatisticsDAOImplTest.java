@@ -1,3 +1,4 @@
+package il.co.myapp.DAOTest;
 import static org.junit.Assert.*;
 
 import java.sql.SQLException;
@@ -35,7 +36,6 @@ public class LinesStatisticsDAOImplTest {
         lineDAO.setConnection(connect);
         Statement statement = lineDAO.getConnection().createStatement();
         statement.executeUpdate(CREATE_TEST_TABLE);
-        System.out.println("ok");
     }
     
     @After
@@ -43,7 +43,6 @@ public class LinesStatisticsDAOImplTest {
         lineDAO.setConnection(connect);
         Statement statement = lineDAO.getConnection().createStatement();
         statement.executeUpdate(DROP_TEST_TABLE);
-        System.out.println("ok");
     }
     
     @Test

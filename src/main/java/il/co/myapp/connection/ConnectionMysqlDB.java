@@ -51,17 +51,5 @@ public class ConnectionMysqlDB extends ConnectionDB {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-    }
-    
-    public static void main(String[] args) {
-        ConnectionDB con = new ConnectionMysqlDB();
-        try {
-            con.initProperties();
-            con.getConnection();
-        } catch (SQLException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-    }
-
+    }   
 }
